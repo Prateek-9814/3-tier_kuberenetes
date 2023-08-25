@@ -32,7 +32,7 @@ spec:
               key: mongo-password
         - name: DB_URL
           valueFrom:
-            configmapKeyRef:
+            configMapKeyRef:
               name: mongo-config
               key: mongo-url
 ---
