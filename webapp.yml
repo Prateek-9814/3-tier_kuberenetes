@@ -35,7 +35,11 @@ spec:
             configMapKeyRef:
               name: mongo-config
               key: mongo-url
-              #comment
+      tolerations:
+      - key: app
+        operator: "Equal"
+        value: "blue"
+        effect: "NoSchedule"
 ---
 apiVersion: v1
 kind: Service
