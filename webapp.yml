@@ -14,7 +14,7 @@ spec:
       labels:
         app: webapp
     spec:
-      containers:
+       containers:
       - name: webapp
         image: nanajanashia/k8s-demo-app:v1.0
         ports:
@@ -35,6 +35,11 @@ spec:
             configMapKeyRef:
               name: mongo-config
               key: mongo-url
+       tolerations:
+       - key: app
+         operator: "equal"
+         value: "blue"
+         effect: "Noschedule"
 ---
 apiVersion: v1
 kind: Service
